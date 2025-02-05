@@ -6,6 +6,7 @@ import java.io.Serial;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "person", schema = "jpa_db")
 public class Person implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
