@@ -23,4 +23,47 @@ public class PersonDao {
             System.out.println("Person: " + person);
         }
     }
+
+    public void insert(Person person) {
+        try {
+            em.getTransaction().begin();
+            em.persist(person);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            em.getTransaction().rollback();
+        } finally {
+            if (em != null) em.close();
+        }
+    }
+
+    public void update(Person person) {
+        try {
+            em.getTransaction().begin();
+            em.merge(person);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            em.getTransaction().rollback();
+        } finally {
+            if (em != null) em.close();
+        }
+    }
+
+    public void delete(Person person) {
+        try {
+            em.getTransaction().begin();
+            em.remove(em.merge(person));
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            em.getTransaction().rollback();
+        } finally {
+            if (em != null) em.close();
+        }
+    }
+
+    public Person findPersonById(Person p) {
+        return em.find(Person.class, p.getIdPerson());
+    }
 }
