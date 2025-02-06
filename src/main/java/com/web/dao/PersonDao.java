@@ -14,14 +14,15 @@ public class PersonDao {
         em = emf.createEntityManager();
     }
 
-    public void list() {
+    public List<Person> list() {
         String hql = "SELECT p FROM Person p";
         Query query = em.createQuery(hql);
         List<Person> persons = query.getResultList();
 
-        for (Person person : persons) {
-            System.out.println("Person: " + person);
-        }
+        // for (Person person : persons) {
+        //   System.out.println("Person: " + person);
+        // }
+        return persons;
     }
 
     public void insert(Person person) {

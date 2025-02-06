@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Hibernate JPA</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Hibernate JPA" %>
 </h1>
 <br/>
-<a href="#">Hello Servlet</a>
+<a href="ServletController">Go to People List</a>
 </body>
 </html>
