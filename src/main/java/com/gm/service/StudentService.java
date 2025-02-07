@@ -16,4 +16,19 @@ public class StudentService {
     public List<Student> listStudents() {
         return studentDao.listStudents();
     }
+
+    public Student getStudentById(Student student) {
+        return studentDao.getStudentById(student);
+    }
+
+    public void saveStudent(Student student) {
+        if (student != null && student.getIdStudent() == null)
+            studentDao.insert(student);
+        else
+            studentDao.update(student);
+    }
+
+    public void deleteStudent(Student student) {
+        studentDao.delete(student);
+    }
 }

@@ -14,7 +14,7 @@ public class AddressDao extends GenericDao {
         return query.getResultList();
     }
 
-    public Object findAddressById(Address address) {
+    public Address findAddressById(Address address) {
         em = getEntityManager();
         return em.find(Address.class, address.getIdAddress());
     }

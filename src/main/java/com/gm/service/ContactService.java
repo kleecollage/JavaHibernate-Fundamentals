@@ -15,4 +15,19 @@ public class ContactService {
     public List<Contact> listContacts() {
         return contactDao.listContacts();
     }
+
+    public Contact getContactById(Contact contact) {
+        return contactDao.getContactById(contact);
+    }
+
+    public void saveContact(Contact contact) {
+        if (contact != null && contact.getIdContact() == null)
+            contactDao.insert(contact);
+        else
+            contactDao.update(contact);
+    }
+
+    public void deleteContact(Contact contact) {
+        contactDao.delete(contact);
+    }
 }
