@@ -20,7 +20,7 @@ public class StudentServletController extends HttpServlet {
         request.setAttribute("students", students);
 
         try {
-            request.getRequestDispatcher("WEB-INF/listStudents").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/listStudents.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace(System.out);
         }

@@ -20,7 +20,7 @@ public class CourseServletController extends HttpServlet {
         request.setAttribute("courses", courses);
 
         try {
-            request.getRequestDispatcher("WEB-INF/listCourses").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/listCourses.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace(System.out);
         }

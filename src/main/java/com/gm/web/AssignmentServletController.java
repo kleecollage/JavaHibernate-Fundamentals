@@ -22,7 +22,7 @@ public class AssignmentServletController extends HttpServlet {
         request.setAttribute("assignments", assignments);
 
         try {
-            request.getRequestDispatcher("WEB-INF/listAssignments").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/listAssignments.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace(System.out);
         }

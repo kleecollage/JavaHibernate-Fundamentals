@@ -22,7 +22,7 @@ public class ContactServletController extends HttpServlet {
         request.setAttribute("contacts", contacts);
 
         try {
-            request.getRequestDispatcher("WEB-INF/listContacts").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/listContacts.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace(System.out);
         }
