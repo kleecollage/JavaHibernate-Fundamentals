@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
+@Table(name = "student", schema = "jpa_students_db")
 public class Student implements Serializable {
 
     @Serial

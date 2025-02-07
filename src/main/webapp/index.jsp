@@ -8,10 +8,10 @@
 <h1><%= "Hibernate JPA" %>
 </h1>
 <br/>
-<a href="AddressController">Go to Addresses List</a>
-<a href="AssignmentController">Go to Assignments List</a>
-<a href="ContactController">Go to Contacts List</a>
-<a href="CourseController">Go to Courses List</a>
-<a href="StudentController">Go to Students List</a>
+<a href="AddressController">Go to Addresses List</a> <br />
+<a href="AssignmentController">Go to Assignments List</a> <br />
+<a href="ContactController">Go to Contacts List</a> <br />
+<a href="CourseController">Go to Courses List</a> <br />
+<a href="StudentController">Go to Students List</a> <br />
 </body>
 </html>

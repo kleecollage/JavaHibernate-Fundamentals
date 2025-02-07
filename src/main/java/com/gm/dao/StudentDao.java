@@ -9,7 +9,7 @@ import jakarta.persistence.Query;
 import java.util.List;
 
 public class StudentDao {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.gm");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernatePU");
     EntityManager em = emf.createEntityManager();
 
     public List<Student> listStudents() {

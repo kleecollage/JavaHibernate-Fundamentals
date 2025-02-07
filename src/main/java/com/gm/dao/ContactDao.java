@@ -1,16 +1,14 @@
 package com.gm.dao;
 
 import com.gm.domain.Contact;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.Query;
+import jakarta.persistence.*;
 
 import java.util.List;
 
 public class ContactDao {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("contactPU");
-    EntityManager em = emf.createEntityManager();
+    // @PersistenceContext(unitName = "HibernatePU")
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernatePU");
+    EntityManager em = emf.createEntityManager() ;
 
     public List<Contact> listContacts() {
         String hql = "SELECT c FROM Contact c";

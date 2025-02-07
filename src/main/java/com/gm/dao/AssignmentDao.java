@@ -1,14 +1,12 @@
 package com.gm.dao;
 
 import com.gm.domain.Assignment;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.Query;
+import jakarta.persistence.*;
 
 import java.util.List;
 
 public class AssignmentDao {
+    // @PersistenceContext(unitName = "HibernatePU")
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernatePU");
     EntityManager em = emf.createEntityManager();
 

@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
+@Table(name = "course", schema = "jpa_students_db")
 public class Course implements Serializable {
     
     @Serial
@@ -22,8 +23,7 @@ public class Course implements Serializable {
     private Double price;
 
     @OneToMany(mappedBy = "course")
-    private List<Course> courses;
-
+    private List<Assignment> assignments;
 
     public Course() { }
 
@@ -55,12 +55,12 @@ public class Course implements Serializable {
         this.price = price;
     }
 
-    public List<Course> getCourses() {
-        return courses;
+    public List<Assignment> getAssignments() {
+        return assignments;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void setAssignments(List<Assignment> assignments) {
+        this.assignments = assignments;
     }
 
     @Override

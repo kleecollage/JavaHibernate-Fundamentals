@@ -6,9 +6,9 @@ import jakarta.persistence.*;
 import java.util.List;
 
 public class AddressDao {
-    // EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernatePU");
-    @PersistenceContext(unitName = "HibernatePU")
-    EntityManager em;
+    // @PersistenceContext(unitName = "HibernatePU")
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernatePU");
+    EntityManager em = emf.createEntityManager();
 
     public List<Address> listAddresses() {
         String hql = "SELECT a FROM Address a";
