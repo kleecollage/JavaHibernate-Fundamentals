@@ -5,24 +5,23 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
-public class ContactDao {
-    // @PersistenceContext(unitName = "HibernatePU")
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernatePU");
-    EntityManager em = emf.createEntityManager() ;
+public class ContactDao extends GenericDao{
 
     public List<Contact> listContacts() {
+        em = getEntityManager();
         String hql = "SELECT c FROM Contact c";
         Query query = em.createQuery(hql);
-        List<Contact> contacts = query.getResultList();
-        return contacts;
+        return query.getResultList();
     }
 
     public Contact getContactById(Contact contact) {
+        em = getEntityManager();
         return em.find(Contact.class, contact.getIdContact());
     }
 
     public void insert(Contact contact) {
         try {
+            em = getEntityManager();
             em.getTransaction().begin();
             em.persist(contact);
             em.getTransaction().commit();
@@ -34,6 +33,7 @@ public class ContactDao {
 
     public void update(Contact contact) {
         try {
+            em = getEntityManager();
             em.getTransaction().begin();
             em.merge(contact);
             em.getTransaction().commit();
@@ -45,6 +45,7 @@ public class ContactDao {
 
     public void delete(Contact contact) {
         try {
+            em = getEntityManager();
             em.getTransaction().begin();
             em.remove(em.merge(contact));
             em.getTransaction().commit();

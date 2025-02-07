@@ -8,23 +8,23 @@ import jakarta.persistence.Query;
 
 import java.util.List;
 
-public class StudentDao {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernatePU");
-    EntityManager em = emf.createEntityManager();
+public class StudentDao extends GenericDao{
 
     public List<Student> listStudents() {
+        em = getEntityManager();
         String hql = "SELECT s FROM Student s";
         Query query = em.createQuery(hql);
-        List<Student> students = query.getResultList();
-        return students;
+        return query.getResultList();
     }
 
     public Student getStudentById(Student student) {
+        em = getEntityManager();
         return em.find(Student.class, student.getIdStudent());
     }
 
     public void insert(Student student) {
         try {
+            em = getEntityManager();
             em.getTransaction().begin();
             em.persist(student);
             em.getTransaction().commit();
@@ -36,6 +36,7 @@ public class StudentDao {
 
     public void update(Student student) {
         try {
+            em = getEntityManager();
             em.getTransaction().begin();
             em.merge(student);
             em.getTransaction().commit();
@@ -47,6 +48,7 @@ public class StudentDao {
 
     public void delete(Student student) {
         try {
+            em = getEntityManager();
             em.getTransaction().begin();
             em.remove(em.merge(student));
             em.getTransaction().commit();
