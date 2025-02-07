@@ -20,12 +20,7 @@ public class AssignmentServletController extends HttpServlet {
         AssignmentService assignmentService = new AssignmentService();
         List<Assignment> assignments = assignmentService.listAssignments();
         request.setAttribute("assignments", assignments);
-
-        try {
-            request.getRequestDispatcher("WEB-INF/listAssignments.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace(System.out);
-        }
+        request.getRequestDispatcher("WEB-INF/listAssignments.jsp").forward(request, response);
 
     }
 }

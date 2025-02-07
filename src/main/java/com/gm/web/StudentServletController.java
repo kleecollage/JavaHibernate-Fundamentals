@@ -12,9 +12,7 @@ import java.util.List;
 public class StudentServletController extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         StudentService studentService = new StudentService();
         List<Student> students = studentService.listStudents();
         request.setAttribute("students", students);

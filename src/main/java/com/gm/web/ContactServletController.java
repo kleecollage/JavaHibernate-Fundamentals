@@ -20,12 +20,7 @@ public class ContactServletController extends HttpServlet {
         ContactService contactService = new ContactService();
         List<Contact> contacts = contactService.listContacts();
         request.setAttribute("contacts", contacts);
-
-        try {
-            request.getRequestDispatcher("WEB-INF/listContacts.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace(System.out);
-        }
+        request.getRequestDispatcher("WEB-INF/listContacts.jsp").forward(request, response);
     }
 
 }

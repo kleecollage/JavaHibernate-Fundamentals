@@ -18,11 +18,6 @@ public class CourseServletController extends HttpServlet {
         CourseService courseService = new CourseService();
         List<Course> courses = courseService.listCourses();
         request.setAttribute("courses", courses);
-
-        try {
-            request.getRequestDispatcher("WEB-INF/listCourses.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace(System.out);
-        }
+        request.getRequestDispatcher("WEB-INF/listCourses.jsp").forward(request, response);
     }
 }

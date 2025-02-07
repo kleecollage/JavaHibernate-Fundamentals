@@ -17,15 +17,21 @@
   <tr>
     <th>ID</th>
     <th>Name</th>
-    <th>Surname</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Phone</th>
   </tr>
   <c:forEach var="student" items="${students}">
     <tr>
       <td>${student.idStudent}</td>
-      <td>${student.name}</td>
-      <td>${student.surname}</td>
+      <td>${student.name} ${student.surname}</td>
+      <td>${student.address.street} ${student.address.noStreet} ${student.address.country}</td>
+      <td>${student.contact.email}</td>
+      <td>${student.contact.phone }</td>
     </tr>
   </c:forEach>
 </table>
+<h4>ACTIONS</h4>
+<a href="${pageContext.request.contextPath}/ServletRedirect">Add</a>
 </body>
 </html>

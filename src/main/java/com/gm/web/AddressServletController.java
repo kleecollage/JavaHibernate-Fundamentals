@@ -19,12 +19,7 @@ public class AddressServletController extends HttpServlet {
         List<Address> addresses = addressService.listAddresses();
         request.setAttribute("addresses", addresses);
         System.out.println("Addresses: " + addresses.toString());
-
-        try {
-            request.getRequestDispatcher("WEB-INF/listAddresses.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace(System.out);
-        }
+        request.getRequestDispatcher("WEB-INF/listAddresses.jsp").forward(request, response);
     }
 
 }
