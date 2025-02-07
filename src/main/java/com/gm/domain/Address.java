@@ -74,4 +74,14 @@ public class Address implements Serializable {
     public int hashCode() {
         return idAddress.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "idAddress=" + idAddress +
+                ", street='" + street + '\'' +
+                ", noStreet='" + noStreet + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 }

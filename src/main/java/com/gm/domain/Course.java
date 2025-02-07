@@ -64,15 +64,6 @@ public class Course implements Serializable {
     }
 
     @Override
-    public String toString() {
-        return "Course{" +
-                "idCourse=" + idCourse +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -83,5 +74,14 @@ public class Course implements Serializable {
     @Override
     public int hashCode() {
         return getIdCourse().hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "price=" + price +
+                ", name='" + name + '\'' +
+                ", idCourse=" + idCourse +
+                '}';
     }
 }

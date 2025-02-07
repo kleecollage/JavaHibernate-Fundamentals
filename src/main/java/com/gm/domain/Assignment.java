@@ -15,11 +15,11 @@ public class Assignment implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_assingment")
+    @Column(name = "id_assignment")
     private Integer idAssignment;
 
     @ManyToOne
-    @JoinColumn(name = "id_stundent", referencedColumnName = "id_student")
+    @JoinColumn(name = "id_student", referencedColumnName = "id_student")
     private Student student;
 
     @ManyToOne
@@ -66,18 +66,6 @@ public class Assignment implements Serializable {
         this.shift = shift;
     }
 
-
-
-    @Override
-    public String toString() {
-        return "Assignment{" +
-                "idAssignment=" + idAssignment +
-                ", student=" + student +
-                ", course=" + course +
-                ", shift='" + shift + '\'' +
-                '}';
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -89,5 +77,15 @@ public class Assignment implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hashCode(getIdAssignment());
+    }
+
+    @Override
+    public String toString() {
+        return "Assignment{" +
+                "idAssignment=" + idAssignment +
+                ", student=" + student +
+                ", course=" + course +
+                ", shift='" + shift + '\'' +
+                '}';
     }
 }

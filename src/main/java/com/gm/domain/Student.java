@@ -88,17 +88,6 @@ public class Student implements Serializable {
     }
 
     @Override
-    public String toString() {
-        return "Student{" +
-                "idStudent=" + idStudent +
-                ", address=" + address +
-                ", contact=" + contact +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -109,5 +98,16 @@ public class Student implements Serializable {
     @Override
     public int hashCode() {
         return idStudent.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", contact=" + contact +
+                ", idStudent=" + idStudent +
+                ", address=" + address +
+                '}';
     }
 }
