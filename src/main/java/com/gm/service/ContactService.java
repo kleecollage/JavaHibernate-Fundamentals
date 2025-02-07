@@ -9,7 +9,7 @@ public class ContactService {
     private ContactDao contactDao;
 
     public ContactService() {
-        this.contactDao = contactDao;
+        this.contactDao = new ContactDao();
     }
 
     public List<Contact> listContacts() {

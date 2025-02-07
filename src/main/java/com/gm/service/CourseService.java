@@ -10,7 +10,7 @@ public class CourseService {
     private CourseDao courseDao;
 
     public CourseService() {
-        this.courseDao = courseDao;
+        this.courseDao = new CourseDao();
     }
 
     public List<Course> listCourses() {

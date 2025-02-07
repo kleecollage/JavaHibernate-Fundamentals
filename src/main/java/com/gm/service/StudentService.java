@@ -10,7 +10,7 @@ public class StudentService {
     private StudentDao studentDao;
 
     public StudentService() {
-        this.studentDao = studentDao;
+        this.studentDao = new StudentDao();
     }
 
     public List<Student> listStudents() {

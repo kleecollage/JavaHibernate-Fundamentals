@@ -9,7 +9,7 @@ public class AssignmentService {
     private AssignmentDao assignmentDao;
 
     public AssignmentService() {
-        this.assignmentDao = assignmentDao;
+        this.assignmentDao = new AssignmentDao();
     }
 
     public List<Assignment> listAssignments() {

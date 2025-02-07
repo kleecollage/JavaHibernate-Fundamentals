@@ -9,7 +9,7 @@ public class AddressService {
     private AddressDao addressDao;
 
     public AddressService() {
-        this.addressDao = addressDao;
+        this.addressDao = new AddressDao();
     }
 
     public List<Address> listAddresses() {
