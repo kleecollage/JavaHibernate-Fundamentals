@@ -1,4 +1,4 @@
-package com.gm;
+package com.gm.test;
 
 import com.gm.dao.*;
 

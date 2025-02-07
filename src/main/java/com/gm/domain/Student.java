@@ -18,11 +18,11 @@ public class Student implements Serializable {
     @Column(name = "id_student")
     private Integer idStudent;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_address", referencedColumnName = "id_address")
     private Address address;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_contact", referencedColumnName = "id_contact")
     private Contact contact;
 
