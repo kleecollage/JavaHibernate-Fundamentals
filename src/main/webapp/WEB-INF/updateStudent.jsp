@@ -14,6 +14,7 @@
 <body>
 <h1>Update Student</h1>
 <form name="fomr1" action="${pageContext.request.contextPath}/ServletUpdate" method="post">
+    <input type="hidden" name="idStudent" value="${student.idStudent}" />
     Name: <input type="text" name="name" value="${student.name}"> <br />
     Surname: <input type="text" name="surname" value="${student.surname}">
     <br /> <br />
@@ -26,7 +27,8 @@
     Email: <input type="email" name="email" value="${student.contact.email}"> <br />
     Phone: <input type="tel" name="phone" value="${student.contact.phone}"> <br />
 
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit" name="submit" value="Submit"> <br />
+    <input type="submit" name="delete" value="Delete">
 </form>
 </body>
 </html>
