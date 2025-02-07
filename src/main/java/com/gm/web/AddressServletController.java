@@ -17,6 +17,7 @@ public class AddressServletController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         AddressService addressService = new AddressService();
         List<Address> addresses = addressService.listAddresses();
         request.setAttribute("addresses", addresses);
