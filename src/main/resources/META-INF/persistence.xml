@@ -5,9 +5,13 @@
              version="3.0">
     <persistence-unit name="HibernatePU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>com.web.domain.Person</class>
+        <class>com.gm.domain.Student</class>
+        <class>com.gm.domain.Address</class>
+        <class>com.gm.domain.Contact</class>
+        <class>com.gm.domain.Course</class>
+        <class>com.gm.domain.Assignment</class>
             <properties>
-                <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_db?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true" />
+                <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_students_db?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true" />
                 <property name="jakarta.persistence.jdbc.user" value="root"/>
                 <property name="jakarta.persistence.jdbc.password" value=""/>
                 <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
