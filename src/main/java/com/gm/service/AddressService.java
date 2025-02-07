@@ -8,7 +8,7 @@ import java.util.List;
 public class AddressService {
     private AddressDao addressDao;
 
-    public AddressService(AddressDao addressDao) {
+    public AddressService() {
         this.addressDao = addressDao;
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 public class ContactService {
     private ContactDao contactDao;
 
-    public ContactService(ContactDao contactDao) {
+    public ContactService() {
         this.contactDao = contactDao;
     }
 

@@ -9,7 +9,7 @@ public class CourseService {
 
     private CourseDao courseDao;
 
-    public CourseService(CourseDao courseDao) {
+    public CourseService() {
         this.courseDao = courseDao;
     }
 

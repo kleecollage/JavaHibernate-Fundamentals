@@ -8,7 +8,7 @@ import java.util.List;
 public class AssignmentService {
     private AssignmentDao assignmentDao;
 
-    public AssignmentService(AssignmentDao assignmentDao) {
+    public AssignmentService() {
         this.assignmentDao = assignmentDao;
     }
 
