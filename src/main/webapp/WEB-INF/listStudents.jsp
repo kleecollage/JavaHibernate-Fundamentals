@@ -23,7 +23,11 @@
   </tr>
   <c:forEach var="student" items="${students}">
     <tr>
-      <td>${student.idStudent}</td>
+      <td>
+        <a href="${pageContext.request.contextPath}/ServletUpdate?idStudent=${student.idStudent}">
+          ${student.idStudent}
+        </a>
+      </td>
       <td>${student.name} ${student.surname}</td>
       <td>${student.address.street} ${student.address.noStreet} ${student.address.country}</td>
       <td>${student.contact.email}</td>
@@ -31,7 +35,7 @@
     </tr>
   </c:forEach>
 </table>
-<h4>ACTIONS</h4>
-<a href="${pageContext.request.contextPath}/ServletRedirect">Add</a>
+<h4>New Student? Click the link bellow</h4>
+<a href="${pageContext.request.contextPath}/ServletRedirect">Add Student</a> <br />
 </body>
 </html>
